@@ -9,11 +9,11 @@ public class CarRentalApplication {
 
 	public static void main(String[] args) {
 
-		ApplicationContext context = SpringApplication.run(CarRentalApplication.class, args);
-		CocheRepo repo = context.getBean(CocheRepo.class);
+	ApplicationContext conte = SpringApplication.run(CarRentalApplication.class, args);
+		CocheRepo repo = conte.getBean(CocheRepo.class);
 
-		Coche toyota = new Coche(1L, "Toyota", "Prius", 2010);
-		repo.save(toyota);
+		System.out.println("Cantidad" + repo.count());
+
 
 
 	}

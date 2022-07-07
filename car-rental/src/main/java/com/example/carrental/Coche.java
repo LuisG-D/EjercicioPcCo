@@ -9,29 +9,29 @@ import javax.persistence.Id;
 public class Coche {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long carId;
 
     private String manufacturer;
     private String model;
-    private Integer year;
+    private Integer dateFabric;
 
     public Coche() {
 
     }
 
-    public Coche(Long id, String manufacturer, String model, Integer year) {
-        this.id = id;
+    public Coche(Long carId, String manufacturer, String model, Integer dateFabric) {
+        this.carId = carId;
         this.manufacturer = manufacturer;
         this.model = model;
-        this.year = year;
+        this.dateFabric = dateFabric;
     }
 
-    public Long getId() {
-        return id;
+    public Long getcarId() {
+        return carId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setcarId(Long carId) {
+        this.carId = carId;
     }
 
     public String getManufacturer() {
@@ -50,21 +50,21 @@ public class Coche {
         this.model = model;
     }
 
-    public Integer getYear() {
-        return year;
+    public Integer getdateFabric() {
+        return dateFabric;
     }
 
-    public void setYear(Integer year) {
-        this.year = year;
+    public void setdateFabric(Integer dateFabric) {
+        this.dateFabric = dateFabric;
     }
 
     @Override
     public String toString() {
         return "Coche{" +
-                "id=" + id +
+                "carId=" + carId +
                 ", manufacturer='" + manufacturer + '\'' +
                 ", model='" + model + '\'' +
-                ", year=" + year +
+                ", dateFabric=" + dateFabric +
                 '}';
     }
 }
