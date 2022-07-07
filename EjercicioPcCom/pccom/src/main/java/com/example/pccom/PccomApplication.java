@@ -18,12 +18,12 @@ public class PccomApplication {
 		LaptopRepository repo = cont.getBean(LaptopRepository.class);
 
 
-		/*Laptop laptop1 = new Laptop(null, "Asus", "Rog Strix", "Create for Gamers", 500, 24);
+		Laptop laptop1 = new Laptop(null, "Asus", "Rog Strix", "Create for Gamers", 500, 24);
 		repo.save(laptop1);
 		Laptop laptop2 = new Laptop(null, "Lenovo", "Rog Strix", "Create for Gamers", 500, 24);
 		repo.save(laptop2);
 		Laptop laptop3 = new Laptop(null, "AMD", "Rog Strix", "Create for Gamers", 500, 24);
-		repo.save(laptop3);*/
+		repo.save(laptop3);
 
 
 	}

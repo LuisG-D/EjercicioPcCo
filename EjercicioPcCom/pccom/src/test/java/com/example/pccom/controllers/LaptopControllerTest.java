@@ -44,7 +44,7 @@ class LaptopControllerTest {
     @Test
     void findOneById() {
         ResponseEntity<Laptop> response =
-                testRestTemplate.getForEntity("/api/laptops/1", Laptop.class);
+                testRestTemplate.getForEntity("/api/laptops/5", Laptop.class);
         assertEquals(HttpStatus.NOT_FOUND,response.getStatusCode());
     }
 
@@ -55,20 +55,21 @@ class LaptopControllerTest {
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
 
         String json = """
-                {    "title": "Laptop de Test",
-                     "author": "LuisG",
-                     "pages": 650,
-                     "price": 19,99,
-                     "releaseDate": "2015-01-01",
-                     "online": true
-                     }
+                {
+                		
+                		"manufacturer": "Laptop de Test",
+                		"modelName": "Rog Strix",
+                		"descriptionDevice": "Create for Gamers",
+                		"hardDrive": 500,
+                		"memorySize": 24
+                	}
                 """;
 
         HttpEntity<String> request = new HttpEntity<>(json, headers);
         ResponseEntity<Laptop> response = testRestTemplate.exchange("/api/laptops", HttpMethod.POST, request, Laptop.class);
         Laptop result = response.getBody();
         assertEquals(1L, result.getLapId());
-        assertEquals("Libro de Test", result.getManufacturer());
+        assertEquals("Laptop de Test", result.getManufacturer());
     }
 
     @Test
